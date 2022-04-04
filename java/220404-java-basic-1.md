@@ -40,7 +40,42 @@
 
 ### 클래스 변수와 인스턴스 변수
 
+- 클래스 변수: 클래스 내에 선언된 변수 앞에 **static** 선언을 붙임(인스턴스 변수x)
+- 인스턴스 변수: 클래스 내에 선언된 변수(=멤버 변수)
+   - 같은 클래스 내에 위치한 메소드 내에서 접근 가능(단, 클래스 메소드는 접근 불가)
+
 클래스 내 멤버 변수에 Integer와 int 선언한 것의 차이
     - int는 초기화 값이 **0**, Integer는 **null**.
 
+<br>
+<br>
 
+### 접근 제어 지시자
+- private: 같은 클래스 내부끼리 접근 가능
+- default: 같은 패키지 내부에서만 접근 가능(상속 관계여도 패키지가 다르면 접근 불가)
+- protected: 같은 패키지나 상속 관계의 클래스에서 접근 가능
+- public: 클래스 외부 어디서나 접근 가능
+
+<br>
+<br>
+
+### this
+인스턴스 자신의 메모리를 가리킴.
+생성자에서 또 다른 생성자를 호출할 때도 사용.
+```java
+public class Person {
+	String name;
+	int age;
+
+	public Person() {
+		//생성자가 모두 호출 완료되어야 인스턴스 생성이 완료되므로, this 이전에 코드를 작성하게 되면 오류
+		this("no name", 0);
+		//여기서부터는 실행 가능!
+	}
+
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;	
+	}
+}
+```
