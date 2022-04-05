@@ -1,24 +1,29 @@
 ## 2828. 사과 담기 게임
 
 **jdk version: java 11**
+**분류: 그리디**
+<br>
 
 출처: https://www.acmicpc.net/problem/2828
 
-### Greedy
+<br>
+<br>
 
-sp: 상자 시작점
-ep: 상자 끝점
-prevSp: 이전의 시작점
-move: 이동 횟수
+sp: 상자 시작점 <br>
+ep: 상자 끝점 <br>
+prevSp: 이전의 시작점 <br>
+move: 이동 횟수 <br>
+
+<br>
 
 `if(sp < apple)`: 사과가 상자 시작점보다 앞에 있을 때
-    - `sp = 사과의 위치` // 상자 시작점과 사과의 위치가 같아야 이동 최소화
-    - `ep = sp + 상자의 길이 - 1`
+     - `sp = 사과의 위치` // 상자 시작점과 사과의 위치가 같아야 이동 최소화
+     - `ep = sp + 상자의 길이 - 1`
 <br>
 
 `if(ep > apple)`: 사과가 상자 끝점보다 뒤에 있을 때
-    - `ep = 사과의 위치` // 상자 끝점과 사과의 위치가 같아야 이동 최소화
-    - `sp = ep - 상자의 길이 + 1`
+     - `ep = 사과의 위치` // 상자 끝점과 사과의 위치가 같아야 이동 최소화
+     - `sp = ep - 상자의 길이 + 1`
 
 <br>
 
@@ -27,7 +32,7 @@ move: 이동 횟수
 <br>
 <br>
 
-## Souce Code
+## Source Code
 
 ```java
 import java.util.Scanner;
