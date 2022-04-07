@@ -1,9 +1,11 @@
 # 목차
 
-[자바 가상 머신의 메모리](#자바-가상-머신의-메모리)
-[overriding과 가상 메서드의 원리](#overriding과-가상-메서드의-원리)
-[추상 클래스](#추상-클래스(abstract-class))
+1. [자바 가상 머신의 메모리](#자바-가상-머신의-메모리)
+2. [overriding과 가상 메서드의 원리](#overriding과-가상-메서드의-원리)
+3. [추상 클래스](#추상-클래스(abstract-class))
 
+<br>
+<br>
 
 ## 자바 가상 머신의 메모리
 
@@ -55,7 +57,7 @@ public class Main {
 }
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e6be821-0336-446e-8233-b2ff6d8cdd14/Untitled.png)
+<img width="453" alt="image" src="https://user-images.githubusercontent.com/56334513/162231915-695098b6-689d-4def-98b0-aa7bd414ab45.png">
 
 <br>
 
