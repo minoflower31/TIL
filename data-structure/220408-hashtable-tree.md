@@ -1,13 +1,4 @@
 # 목차
-
-- [Hash Table](#hash-table)
-  - [충돌(Collision) 해결 알고리즘](#충돌(collision)-해결-알고리즘)
-    - [Chaining 기법](#chaining-기법)
-    - [Linear Proving 기법](#linear-proving-기법)
-  
-  - [시간 복잡도](#시간-복잡도)
-<br>
-
 - [목차](#목차)
 - [Hash Table](#hash-table)
   - [충돌(Collision) 해결 알고리즘](#충돌collision-해결-알고리즘)
@@ -140,21 +131,16 @@ e.g. `return key % 8` -> `return key % 200` <br>
 
 <br>
 
-> <br>
-> 
 > BST에서 삽입 시
-> <br>
-> 
+
 <br>
 
 ![](https://blog.penjee.com/wp-content/uploads/2015/11/binary-search-tree-insertion-animation.gif)
 
 <br>
 
-> <br>
 > BST와 Sorted Array 탐색 비교
-> <br>
-> 
+
 <br>
 
 ![](https://blog.penjee.com/wp-content/uploads/2015/11/binary-search-tree-sorted-array-animation.gif)
@@ -184,8 +170,6 @@ e.g. `return key % 8` -> `return key % 200` <br>
 
 #### Child Node가 두 개인 Node 제거
 
-> <br>
-> 
 > - 삭제할 노드의 오른쪽 자식 노드 중에서 가장 왼쪽 노드와 change
 >   1. 삭제 노드의 오른쪽 자식 노드 선택
 >   2. 오른쪽 자식 노드가 가진 맨 왼쪽의 노드(=change할 노드)를 선택
@@ -195,8 +179,8 @@ e.g. `return key % 8` -> `return key % 200` <br>
 >   <br>
 >   -  단, change할 노드가 오른쪽 자식 노드를 가질 경우, 오른쪽 자식 노드를 change할 노드로 삼고    3~5 단계 진행
 > <br>
+> 
 > - 삭제할 노드의 왼쪽 자식 노드 중에서 가장 오른쪽 노드와 chagne
-> <br>
 
 - 만약 변경할 노드의 우측 노드에 자식 노드들이 존재해도 알고리즘 기반에 의해 트리에 영향 X
 
