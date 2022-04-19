@@ -126,6 +126,7 @@ public int hashCode() {
 
 - 내부적으로 BST가 구현됨
 - 특정 조건에 맞는 정렬을 원할 경우, `Comparable이나 Comparator 인터페이스` 사용
+   - compareTo에서 비교하는 `자료형`에 따라 treeSet에 저장되는 값이 다름
 
 <br>
 <br>
