@@ -194,4 +194,9 @@ public class JoinTest extends Thread {
 
 ## wait() / notify() 메서드 사용
 
+- 접근하려는 리소스가 유효한 상태가 아닌 경우 Thread는 **waiting** 상태가 됨 `wait()`
+- 유효한 자원이 나타날 때까지 기다렸다가 생기면 `notify()`를 통해 **waiting** 상태인 여러 thread 중에 무작위로 **runnable** 상태로 돌아오게 함
+- `notifyAll()`은 waiting 상태의 모든 thread를 runnable 상태로 **(java에서 권장하는 스펙)**
+- 자원에 접근하지 못한 thread들은 다시 waiting 상태로 돌려보냄
+
 e.g. 한정된 소켓을 사용할 경우
