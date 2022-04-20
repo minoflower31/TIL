@@ -14,7 +14,7 @@
 <br>
 
 - 각 thread 사이에 공유하는 자원이 존재할 수 있음 (자바는 static)
-- 여러 thread가 공유 자원에 대해 동시에 접근할 때, 서로 자원을 차지하려는 `race condition` 발생
+- 여러 thread가 공유 자원에 대해 동시에 접근할 때, 접근 타이밍이나 순서 등이 결과값에 영향을 줄 수 있는 상태인 `race condition` 발생
 - 동시에 접근해서는 안되는 공유 자원을 접근하는 코드의 일부를 `critical section` 이라 함
 - critical section에 대해 `세마포어` 같은 동기화 메커니즘으로 접근해야 함. (차례로 접근)
 
@@ -31,7 +31,7 @@
   - 실행할 시간을 주는 것은 스레드 스케줄러의 책임
   - 다중 스레드 프로그램은 각 개별 스레드에 고정된 시간을 할당하는데, 각각의 모든 스레드는 잠시 동안 실행된 다음, 다른 스레드가 실행할 수 있도록 CPU를 다른 스레드에 양도함
 - **blocked, waiting**
-- **time waiting**: time-out 매개변수가 있는 메서드를 호출한 상태
+- **time wing**: time-out 매개변수가 있는 메서드를 호출한 상태
   - `sleep()`이나 `wait()` 메서드를 호출할 때 이 상태로 이동
 - **terminated**
   1. 정상적으로 종료
@@ -123,7 +123,7 @@ public class Main {
 
 ## join()
 
-- 동시에 두 개 이상의 thread가 실행될 때 특정 thread가 우선적으로 실행되어야 할 때
+- 동시에 두 개 이상의 thread가 실행될 때 특정 thread를 우선적으로 실행하고 싶을 때
 - **Waits for this thread to die.** (java api)
   - e.g. main thread에서 다른 스레드의 join() 호출 시에 다른 스레드가 종료할 때까지 기다림(=non-runnable) 
 ```java
@@ -195,7 +195,7 @@ public class JoinTest extends Thread {
 ## wait() / notify() 메서드 사용
 
 - 접근하려는 리소스가 유효한 상태가 아닌 경우 Thread는 **waiting** 상태가 됨 `wait()`
-- 유효한 자원이 나타날 때까지 기다렸다가 생기면 `notify()`를 통해 **waiting** 상태인 여러 thread 중에 무작위로 **runnable** 상태로 돌아오게 함
+- 유효한 자원이 나타날 때까지 기다렸다가 생기게 되면 `notify()`를 통해 **waiting** 상태인 여러 thread 중에 무작위로 **runnable** 상태로 돌아오게 함
 - `notifyAll()`은 waiting 상태의 모든 thread를 runnable 상태로 **(java에서 권장하는 스펙)**
 - 자원에 접근하지 못한 thread들은 다시 waiting 상태로 돌려보냄
 
