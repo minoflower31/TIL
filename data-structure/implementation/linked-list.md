@@ -15,7 +15,6 @@ public interface ILinkedList<T> {
 ```
 <br>
 
-
 # LinkedList Code
 
 ```java
@@ -32,6 +31,7 @@ public class MyLinkedList<T> implements ILinkedList<T> {
 
         Node(T data) {
             this.data = data;
+            next = null;
         }
     }
 
@@ -51,7 +51,7 @@ public class MyLinkedList<T> implements ILinkedList<T> {
 
     @Override
     public void add(int index, T data) {
-        if (index < 0 || index >= size) {
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
 
@@ -61,11 +61,11 @@ public class MyLinkedList<T> implements ILinkedList<T> {
             return;
         }
 
-        Node node = new Node(data);
+        Node newNode = new Node(data);
 
         if(index == 0) {
-            node.next = head;
-            head = node;
+            newNode.next = head;
+            head = newNode;
         } else {
             Node cur = head;
             int i = 0;
@@ -73,8 +73,8 @@ public class MyLinkedList<T> implements ILinkedList<T> {
                 cur = cur.next;
             }
             Node nextNode = cur.next;
-            cur.next = node;
-            node.next = nextNode;
+            cur.next = newNode;
+            newNode.next = nextNode;
         }
         size++;
     }
@@ -84,7 +84,7 @@ public class MyLinkedList<T> implements ILinkedList<T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         if(head == null) {
             throw new NoSuchElementException();
         }
@@ -118,4 +118,5 @@ public class MyLinkedList<T> implements ILinkedList<T> {
         System.out.println();
     }
 }
+
 ```
