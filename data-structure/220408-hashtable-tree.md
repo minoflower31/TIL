@@ -109,11 +109,15 @@ e.g. `return key % 8` -> `return key % 200` <br>
 
 **Node와 Branch를 이용하고 여러 노드가 한 노드를 가리킬 수 없는, 즉 사이클이 존재하지 않는 데이터 구조** <br>
 
-- 응용: 이진 탐색 트리 
+- 응용: 이진 탐색 트리
+
+<img width="398" alt="image" src="https://user-images.githubusercontent.com/56334513/165089023-d94db5db-c76d-4432-9919-e6ed73ec7cf1.png">
+
+출처: https://namu.wiki/w/%ED%8A%B8%EB%A6%AC(%EA%B7%B8%EB%9E%98%ED%94%84)
 
 <br>
 
-**용어** <br>
+**용어**
 - Node: 트리에 데이터를 저장하는 요소(data, branch)
 - Root Node: 최상위 노드
 - Level: Root Node를 level 0으로 설정하여 최하위 노드까지 층으로 나눈 것
@@ -121,7 +125,6 @@ e.g. `return key % 8` -> `return key % 200` <br>
 - Sibling: 동일한 Parent Node를 가진 노드들
 - Depth: 트리에서 노드가 가질 수 있는 최대 Level
 
-<br>
 <br>
 
 ## 이진 트리
