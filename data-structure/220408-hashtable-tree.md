@@ -124,9 +124,27 @@ e.g. `return key % 8` -> `return key % 200` <br>
 <br>
 <br>
 
-## 이진 트리와 이진 탐색 트리
+## 이진 트리
+
+### 정 이진 트리 (Full Binary Tree)
+
+- 엄격한(strict) 이진 트리
+- 모든 노드가 2개의 자식을 갖거나, 자식이 없을 때(자식을 하나만 가지고 있으면 위배)
+
+### 포화 이진 트리 (Perfect Binary Tree)
+
+- 모든 노드가 2개의 자식을 가지고ㅈ leaf 노드가 모두 같은 레벨일 때
+- 높이가 h인 포화 이진 트리에서 노드의 갯수는 2^k+1 - 1
+- leat 노드의 개수는 2^h
+
+<img width="602" alt="image" src="https://user-images.githubusercontent.com/56334513/165052250-a63cfbab-181a-470f-b746-f6492f8d8831.png">
+
+<br> 
+
+## 이진 탐색 트리
 
 - 이진 트리: 노드의 최대 branch가 2개인 트리
+  - 응용: Heap, BST, B-tree(db나 filesystem에서 사용), AVL 트리
 - **이진 탐색 트리(Binary Search Tree, BST)**: 하나의 특정 노드가 존재하면 왼쪽에는 해당 노드보다 작고, 오른쪽에는 해당 노드보다 큰 트리
 
 <br>
