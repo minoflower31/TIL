@@ -1,8 +1,8 @@
 ## 2828. 사과 담기 게임
 
-**jdk version: java 11**
-**분류: 그리디**
-<br>
+    - jdk version: java 11
+    - 분류: 그리디
+
 
 출처: https://www.acmicpc.net/problem/2828
 
