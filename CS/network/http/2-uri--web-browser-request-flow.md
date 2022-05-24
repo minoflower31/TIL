@@ -38,3 +38,7 @@ URI이란,
 
 <img width="639" alt="image" src="https://user-images.githubusercontent.com/56334513/170081875-7bcba8a9-6296-4135-bdb9-cefada28bcf5.png">
 
+<br>
+<br>
+
+> 출처: 인프런 - 김영한님의 모든 개발자를 위한 HTTP 웹 기본 지식 https://inf.run/g8eP
