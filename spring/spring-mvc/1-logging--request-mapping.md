@@ -83,3 +83,10 @@ public String findUser(@PathVariable String userId) {
 #### HTTP 요청 Accept. `produce`
 + `@PostMapping(value = "...", consumes = "application/json")`
 + Accept 헤더 정보를 기반으로 매핑
+
+
+<br>
+<br>
+
+---
+> 참고: 인프런 - 김영한님의 스프링 MVC 1편(백엔드 웹 개발 핵심 기술) https://inf.run/6La3

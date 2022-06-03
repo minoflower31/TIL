@@ -155,3 +155,9 @@ public HelloData requestBodyJson(@RequestBody HelloData data) {
 + HttpMessageConverter가 Http 메시지 바디의 내용을 String 혹은 Object로 변환해줌
   + 요청 헤더에 Content-Type으로 `application/json`이여야만 컨버터가 실행됨!
 
+
+<br>
+<br>
+
+---
+> 참고: 인프런 - 김영한님의 스프링 MVC 1편(백엔드 웹 개발 핵심 기술) https://inf.run/6La3
