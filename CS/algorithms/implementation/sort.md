@@ -18,6 +18,7 @@ private void pivot(int[] arr, int low, int high) {
         while (arr[r] > pivotVal) r--;
 
         if(l <= r) {
+            if(arr[l] < arr[r]) break;
             int tmp = arr[l];
             arr[l] = arr[r];
             arr[r] = tmp;
