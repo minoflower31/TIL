@@ -3,18 +3,22 @@
 참고 강의: [인프런 - [데브원영] 아파치 카프카 for beginners](https://www.inflearn.com/course/%EC%95%84%ED%8C%8C%EC%B9%98-%EC%B9%B4%ED%94%84%EC%B9%B4-%EC%9E%85%EB%AC%B8/dashboard)
 
 <br>
+<br>
 
 # 카프카 개요 및 설명
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/156a3ada-709e-4dbe-84b4-90ec94334a73/Untitled.png)
+<img width="378" alt="image" src="https://github.com/minoflower31/TIL/assets/56334513/2e88d5af-c73e-4010-adea-a8f79a87494c">
 
 Source Application과 TargetApplication이 증가함에 따라 데이터를 전송하기 까다로워짐
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0414fe3e-b5a0-463e-9c28-f3024305b8c4/Untitled.png)
+<img width="713" alt="image" src="https://github.com/minoflower31/TIL/assets/56334513/9770ba4d-e9a3-489c-9d98-3800e1a82770">
+
 
 - Kafka는 Queue와 같은 기능을 제공함. 큐에 넣는 원소는 Topic이라고 불림
 - 데이터 손실 없이 복구 가능
 - 낮은 지연율, 높은 처리량을 제공
+
+<br>
 
 # Topic
 
@@ -25,9 +29,12 @@ Source Application과 TargetApplication이 증가함에 따라 데이터를 전�
 - Producer가 Topic에 데이터를 넣으면 Consumer가 Topic에서 데이터를 가져옴
 - 목적에 따라 클릭 로그, send sms, location_log 와 같이 이름을 지정할 수 있음
 
+<br>
+
 ## 내부 모습 및 동작
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fd045b4d-3a40-4b23-9d75-2f4930128116/Untitled.png)
+<img width="447" alt="image" src="https://github.com/minoflower31/TIL/assets/56334513/4b93ca4c-fe75-40ed-88aa-1a96f5e04a06">
+
 
 - 끝에서부터 쌓이게 되는 구조
 - Consumer는 가장 오래된 데이터(0)부터 가져옴
@@ -39,16 +46,20 @@ Source Application과 TargetApplication이 증가함에 따라 데이터를 전�
 
 **New Situation - 파티션 1개가 늘어난 경우**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/63d3957d-26f3-4af6-a5cf-898ddd809eff/Untitled.png)
+<img width="507" alt="image" src="https://github.com/minoflower31/TIL/assets/56334513/d272b967-6ecf-4257-bacb-f8ef1145a1cd">
+
 
 - 데이터를 넣을 때 Key를 지정할 수도 있다.
 - [7] 데이터는 어디로 들어가야 할까?
     1. 키가 null이고 기본 파티셔너 사용 O → 라운드 로빈으로 할당
     2. 키가 있고, 기본 파티셔너 사용 O → 키의 해시값을 구한 후, 해당 파티션에 할당
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/70a56e4a-c31a-47d0-bd38-6e7ae71e3e48/Untitled.png)
+<img width="505" alt="image" src="https://github.com/minoflower31/TIL/assets/56334513/55037241-864a-4111-b445-f1e8c5fe5f86">
+
 
 - 해당 예제에서는 키를 설정하지 않았다는 전제 하에 Round Robin으로 할당되는 모습을 확인할 수 있다.
+
+<br>
 
 **❗️주의) 파티션을 함부로 늘리면 안된다.**
 
@@ -60,6 +71,9 @@ Source Application과 TargetApplication이 증가함에 따라 데이터를 전�
         - 최대 record 보존 시간 `log.retention.ms`
         - 최대 record 보존 크기 (byte) `log.retention.byte`
 
+<br>
+<br>
+
 # Broker, Replication, ISR
 
 ## Broker
@@ -69,15 +83,19 @@ Source Application과 TargetApplication이 증가함에 따라 데이터를 전�
 - 예시 상황
     - 만약 파티션 1개, replication이 1인 Topic 존재, 브로커가 3대라면 브로커 3대 중 1대의 해당 토픽의 데이터가 저장됨
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/027bbc16-2b90-4c97-9f0c-57867004fa14/Untitled.png)
+<img width="428" alt="image" src="https://github.com/minoflower31/TIL/assets/56334513/edcf3f1f-b1e2-4842-95a3-49d5b4adf77f">
 
 replication이 3이면 broker #3에서 사본 파티션이 생성됨
 
 (broker count ≥ replication count)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8be9ff6c-354a-4e95-885e-58cdab65402b/Untitled.png)
+<br>
+
+<img width="421" alt="image" src="https://github.com/minoflower31/TIL/assets/56334513/ca3e5e2b-aece-46c3-8803-58bb964b1efd">
 
 원본은 Leader, 사본은 Follower라 불리는데 Leader, Follower 파티션을 합쳐서 **ISR**이라고 불림
+
+<br>
 
 ## Replication
 
