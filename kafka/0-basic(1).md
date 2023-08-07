@@ -42,7 +42,7 @@ Source Application과 TargetApplication이 증가함에 따라 데이터를 전�
     - 새로운 Consumer가 해당 데이터를 다시 가져올 수 있는데 이는 조건이 존재함
         1. 컨슈머 그룹이 다를 경우
         2. auto.offset.reset = earliest 로 설정되어야 함
-    
+
 
 **New Situation - 파티션 1개가 늘어난 경우**
 
@@ -109,7 +109,7 @@ replication이 3이면 broker #3에서 사본 파티션이 생성됨
         - 응답은 보장하나 나머지 파티션(=replication된 파티션)에 복제되었는지 알 수 없음
     - Option all: follwer 파티션들도 데이터가 저장되는 것을 확인하는 절차를 거침
         - 데이터 유실은 거의 존재하지 않으나 속도는 느림
-        
+
 - replication을 늘리는 것은 좋은가?
     - No. 브로커의 리소스 사용량이 늘어나기 때문에 비용 문제가 발생
     - `Tip` 카프카에 들어오는 데이터량, retention date를 고려하여 설계
